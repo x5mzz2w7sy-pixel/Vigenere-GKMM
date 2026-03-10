@@ -21,7 +21,7 @@
 
 #secret {
     color: red;
-    display: none;
+    display: block;
     margin-top: 20px;
 }   
   </style>
@@ -30,7 +30,7 @@
 function checkPassword() {
     var input = document.getElementById("passwordInput").value;
 
-    if (input === “PEZA”) {  
+    if (input === “peza”) {  
         document.getElementById("secret").style.display = "block";
     } else {
         document.getElementById("secret").style.display = "none";
