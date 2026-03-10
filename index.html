@@ -1,63 +1,123 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+```html
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title>The Bark Called Millions of Years</title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-    p.p3 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    p.p4 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Helvetica}
-    span.s1 {font-kerning: none}
-<body {
-    background-color: black;
-    color: white;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
+<meta charset="UTF-8">
+<title>The Bark Called Millions of Years</title>
+
+<style>
+
+body{
+    background:black;
+    color:white;
+    font-family: "Courier New", monospace;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
 }
 
-#secret {
-    color: red;
-    display: block;
-    margin-top: 20px;
-}   
-  </style>
-
-  <script>
-function checkPassword() {
-    var input = document.getElementById("passwordInput").value;
-
-    if (input === “peza”) {  
-        document.getElementById("secret").style.display = "block";
-    } else {
-        document.getElementById("secret").style.display = "none";
-    }
+.container{
+    width:700px;
+    text-align:center;
 }
 
-function formatInput(el) {
-    el.value = el.value.toUpperCase().replace(/[^A-Z]/g,'').slice(0,4);
+.poem{
+    line-height:1.6;
+    margin-bottom:40px;
+    color:#ddd;
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    var input = document.getElementById("passwordInput");
+input{
+    background:black;
+    border:2px solid white;
+    color:white;
+    font-size:22px;
+    text-align:center;
+    padding:10px;
+    width:120px;
+    letter-spacing:6px;
+}
 
-    input.addEventListener("keyup", function(event) {
-        if (event.key === "Enter") {
-            checkPassword();
-        }
-    });
-});
-</script>
+button{
+    margin-left:10px;
+    padding:10px 16px;
+    background:white;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+}
 
+button:hover{
+    background:#ddd;
+}
+
+#secret{
+    margin-top:30px;
+    opacity:0;
+    transition:opacity 1s;
+    color:#ff4444;
+    font-size:22px;
+}
+
+#secret.show{
+    opacity:1;
+}
+
+#error{
+    margin-top:15px;
+    color:#ff4444;
+    height:20px;
+}
+
+.shake{
+    animation:shake .35s;
+}
+
+@keyframes shake{
+    0%{transform:translateX(0)}
+    25%{transform:translateX(-6px)}
+    50%{transform:translateX(6px)}
+    75%{transform:translateX(-6px)}
+    100%{transform:translateX(0)}
+}
+
+.flash{
+    border-color:red;
+}
+
+</style>
 </head>
+
 <body>
+
+<div class="container">
+
+<div class="poem">
+
 <p>
-Upon the silent bark that drifts through years untold, The pilgrim weighs the heart as Libra once was told. Seek not in distant stars nor sigils drawn above— The word you need is hidden here, a seed of will and love.
-Four letters guard the current flowing through the Law, A measure known to those who balance scale and awe. Count well the tongue of Hellas where the numbers dwell; The sum is ninety-three for those who read it well.
-Look not beyond this verse nor through the midnight bell: The key you seek already lives where these lines swell. Among these words it waits, unmasked to careful sight— A fragment of the Law concealed in measured light.
+Upon the silent bark that drifts through years untold,<br>
+The pilgrim weighs the heart as Libra once was told.<br>
+Seek not in distant stars nor sigils drawn above—<br>
+The word you need is hidden here, a seed of will and love.
+</p>
+
+<p>
+Four letters guard the current flowing through the Law,<br>
+A measure known to those who balance scale and awe.<br>
+Count well the tongue of Hellas where the numbers dwell;<br>
+The sum is ninety-three for those who read it well.
+</p>
+
+<p>
+Look not beyond this verse nor through the midnight bell:<br>
+The key you seek already lives where these lines swell.<br>
+Among these words it waits, unmasked to careful sight—<br>
+A fragment of the Law concealed in measured light.
+</p>
+
+<p>
 And I swear:
 Never to reveal
 What I learn beneath the Seal
@@ -81,22 +141,74 @@ Which I do know
 By the letters: J, U, N, O.
 </p>
 
+</div>
+
 <hr>
 
 <p>The Pass is:</p>
 
-<input 
-type="text" 
-id="passwordInput" 
+<input
+type="text"
+id="passwordInput"
 maxlength="4"
-oninput="formatInput(this)"
 placeholder="----"
 >
 
 <button onclick="checkPassword()">Submit</button>
 
-<p id="secret">
-Congratulations. If you choose to continue this Way of J.U.N.O., you will find Us here: https (colon slash slash) signal (dot) group (slash pound key) CjQKIG07DqDUmTas2gRxM-JgEGM3dUdVyaDFb_r1b_ga-B6sBREhACZCScM12w2ti-Mvy9N5hOA
-</p>
+<div id="error"></div>
+
+<div id="secret">
+The hidden current opens. 93. https://signal.group/#CjQKIG07DqDUmTas2gRxM-JgEGM3dUdVyaDFb_r1b_ga-B6sBREhACZCScM12w2ti-Mvy9N5hOA
+</div>
+
+</div>
+
+<script>
+
+const input = document.getElementById("passwordInput");
+
+input.addEventListener("input", function(){
+    input.value = input.value.toUpperCase().replace(/[^A-Z]/g,'').slice(0,4);
+});
+
+input.addEventListener("keyup", function(e){
+    if(e.key === "Enter"){
+        checkPassword();
+    }
+});
+
+function checkPassword(){
+
+    const value = input.value;
+    const secret = document.getElementById("secret");
+    const error = document.getElementById("error");
+
+    if(value === "PEZA"){
+
+        secret.classList.add("show");
+        error.textContent = "";
+
+    } else {
+
+        secret.classList.remove("show");
+
+        error.textContent = "Incorrect pass.";
+
+        input.classList.add("shake");
+        input.classList.add("flash");
+
+        setTimeout(()=>{
+            input.classList.remove("shake");
+            input.classList.remove("flash");
+            input.value="";
+        },400);
+
+    }
+}
+
+</script>
+
 </body>
 </html>
+```
